@@ -71,7 +71,7 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style>
 .admin {
   height: 100%;
   width: 100%;
