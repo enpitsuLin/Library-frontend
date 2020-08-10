@@ -2,43 +2,46 @@
   <div>
     <v-carousel hide-delimiters :height="fix_height" class="carousel">
       <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src">
-        <v-container
-          class="flex-row carousel-container"
-          :style="{'padding-top':fix_height- 250+'px'}"
-        >
-          <v-row class="carousel-title d-none d-md-flex">
-            <v-col>恢复楼内全部服务的通知</v-col>
-          </v-row>
-          <v-row class="carousel-body d-none d-md-flex">
-            <v-divider class="d-none d-md-flex"></v-divider>
-          </v-row>
-          <v-row class="carousel-body d-none d-md-flex">
-            <v-col
-              class="carousel-content"
-            >图书馆在做好常态化疫情防控工作、继续确保线上服务正常运行的同时，自6月5日起恢复楼内全部服务，欢迎在校师生到现场享用图书馆服务。</v-col>
-          </v-row>
-          <v-row
-            justify="center"
-            class="carousel-service-icon"
-            :style="{'margin-top':service_icon+'px'}"
-            no-gutters
+        <div class="carousel-gradient">
+          <v-container
+            class="flex-row carousel-container"
+            :style="{'padding-top':fix_height- 250+'px'}"
           >
-            <v-col
-              class="service-icon"
-              v-for="(item,i) in service"
-              :key="i"
-              lg="1"
-              md="1"
-              sm="3"
-              xs="3"
+            <v-row class="carousel-title d-none d-md-flex">
+              <v-col>恢复楼内全部服务的通知</v-col>
+            </v-row>
+            <v-row class="carousel-body d-none d-md-flex">
+              <v-divider class="d-none d-md-flex"></v-divider>
+            </v-row>
+            <v-row class="carousel-body d-none d-md-flex">
+              <v-col
+                class="carousel-content"
+              >图书馆在做好常态化疫情防控工作、继续确保线上服务正常运行的同时，自6月5日起恢复楼内全部服务，欢迎在校师生到现场享用图书馆服务。</v-col>
+            </v-row>
+            <v-row
+              justify="center"
+              class="carousel-service-icon"
+              :style="{'margin-top':service_icon+'px'}"
+              no-gutters
             >
-              <a href="#">
-                <v-icon>{{item.icon}}</v-icon>
-                <p>{{item.title}}</p>
-              </a>
-            </v-col>
-          </v-row>
-        </v-container>
+              <v-col
+                class="service-icon"
+                v-for="(item,i) in service"
+                :key="i"
+                xl="1"
+                lg="1"
+                md="1"
+                sm="3"
+                cols="3"
+              >
+                <a href="#">
+                  <v-icon>{{item.icon}}</v-icon>
+                  <p>{{item.title}}</p>
+                </a>
+              </v-col>
+            </v-row>
+          </v-container>
+        </div>
       </v-carousel-item>
     </v-carousel>
   </div>
@@ -120,7 +123,11 @@ export default {
 
 <style lang="less" scoped>
 .carousel {
-  background-image: linear-gradient(0deg, black, transparent);
+  .carousel-gradient {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.700), transparent);
+  }
   .carousel-container {
     .carousel-title {
       width: 1140px;
